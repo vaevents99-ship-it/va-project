@@ -1,0 +1,230 @@
+/* ============================================================
+   theme.css  —  VA Decorations
+   ✏️  THIS IS THE ONLY FILE YOU NEED TO EDIT TO CHANGE THEME
+   ============================================================
+
+   HOW TO USE
+   ──────────
+   1. Edit the variables inside :root {} below.
+   2. Save. Done. Every component picks up the change instantly.
+   3. See "PRESET THEMES" at the bottom for ready-made swaps.
+
+   VARIABLE REFERENCE
+   ──────────────────
+   --bg-primary        Main page background
+   --bg-secondary      Alternate section background
+   --bg-navbar         Navbar background (scrolled state)
+   --bg-drawer         Mobile drawer / overlay background
+   --bg-card           Glass card fill
+   --bg-input          Form input background
+
+   --text-primary      Main body text
+   --text-muted        Dimmed / secondary text
+   --text-placeholder  Input placeholder text
+
+   --accent            Core accent (gold)
+   --accent-light      Lighter accent (shimmer, particles)
+   --accent-pale       Faintest accent (pill bg, section tint)
+   --accent-deep       Deepest accent (hover, active, btn text)
+
+   --border-accent     Accent border (cards, inputs, pills)
+   --border-accent-hover Accent border on hover
+
+   --scrollbar-track   Scrollbar track color
+   ============================================================ */
+
+:root {
+
+  /* ── NAVY + GOLD (default) ─────────────────────────────── */
+
+  /* Backgrounds */
+  --bg-primary:       #000000;   /* main navy */
+  --bg-secondary:     #071A3E;   /* darker navy sections */
+  --bg-navbar:        rgba(7, 26, 62, 0.96);
+  --bg-drawer:        rgba(7, 26, 62, 0.98);
+  --bg-card:          rgba(255, 255, 255, 0.07);
+  --bg-input:         rgba(255, 255, 255, 0.05);
+  --bg-input-focus:   rgba(255, 255, 255, 0.08);
+
+  /* Text */
+  --text-primary:     #ffffff;
+  --text-muted:       rgba(255, 255, 255, 0.58);
+  --text-placeholder: rgba(255, 255, 255, 0.35);
+
+  /* Accent — Gold */
+  --accent:           #d4af37;
+  --accent-light:     #f4d97a;
+  --accent-pale:      #fff3c4;
+  --accent-deep:      #b8962e;
+
+  /* Accent RGB (used in rgba() calls) */
+  --accent-rgb:       212, 175, 55;
+
+  /* Borders */
+  --border-accent:       rgba(212, 175, 55, 0.20);
+  --border-accent-hover: rgba(212, 175, 55, 0.42);
+
+  /* Misc */
+  --scrollbar-track:  #071A3E;
+  --btn-text:         #0B2A5B;   /* text color ON gold button */
+
+  /* Section gradients (used in inline style="" on sections) */
+  --section-hero-overlay:
+    linear-gradient(to bottom, rgba(7,26,62,0.68) 0%, rgba(11,42,91,0.78) 55%, rgba(7,26,62,0.94) 100%);
+  --section-services:
+    linear-gradient(to bottom, #0B2A5B, #071A3E);
+  --section-why:      #071A3E;
+  --section-testi:
+    linear-gradient(to bottom, #071A3E, #0B2A5B);
+  --section-cta:
+    linear-gradient(135deg, #0B2A5B 0%, #1E3A8A 50%, #0B2A5B 100%);
+  --section-footer:   #071A3E;
+}
+
+
+/* ============================================================
+   PRESET THEMES
+   Copy any block below and paste it over the :root block above
+   ============================================================
+
+── WHITE + GOLD ──────────────────────────────────────────────
+:root {
+  --bg-primary:       #ffffff;
+  --bg-secondary:     #fdf6e3;
+  --bg-navbar:        rgba(255, 255, 255, 0.96);
+  --bg-drawer:        rgba(255, 255, 255, 0.98);
+  --bg-card:          rgba(255, 255, 255, 0.85);
+  --bg-input:         rgba(255, 255, 255, 0.90);
+  --bg-input-focus:   rgba(255, 255, 255, 0.95);
+
+  --text-primary:     #1a1a2e;
+  --text-muted:       rgba(26, 26, 46, 0.58);
+  --text-placeholder: rgba(26, 26, 46, 0.38);
+
+  --accent:           #d4af37;
+  --accent-light:     #f4d97a;
+  --accent-pale:      #fdf6e3;
+  --accent-deep:      #b8962e;
+  --accent-rgb:       212, 175, 55;
+
+  --border-accent:       rgba(212, 175, 55, 0.25);
+  --border-accent-hover: rgba(212, 175, 55, 0.50);
+
+  --scrollbar-track:  #f5f5f5;
+  --btn-text:         #ffffff;
+
+  --section-hero-overlay:
+    linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.30) 55%, rgba(255,255,255,0.85) 100%);
+  --section-services: linear-gradient(to bottom, #ffffff, #fdf6e3);
+  --section-why:      #fdf6e3;
+  --section-testi:    linear-gradient(to bottom, #fdf6e3, #ffffff);
+  --section-cta:      linear-gradient(135deg, #fdf6e3 0%, #fff8e7 50%, #fdf6e3 100%);
+  --section-footer:   #fdf6e3;
+}
+
+── BLACK + GOLD (luxury dark) ────────────────────────────────
+:root {
+  --bg-primary:       #0a0a0a;
+  --bg-secondary:     #050505;
+  --bg-navbar:        rgba(5, 5, 5, 0.97);
+  --bg-drawer:        rgba(5, 5, 5, 0.99);
+  --bg-card:          rgba(255, 255, 255, 0.05);
+  --bg-input:         rgba(255, 255, 255, 0.04);
+  --bg-input-focus:   rgba(255, 255, 255, 0.07);
+
+  --text-primary:     #ffffff;
+  --text-muted:       rgba(255, 255, 255, 0.52);
+  --text-placeholder: rgba(255, 255, 255, 0.28);
+
+  --accent:           #d4af37;
+  --accent-light:     #f4d97a;
+  --accent-pale:      #1a1500;
+  --accent-deep:      #b8962e;
+  --accent-rgb:       212, 175, 55;
+
+  --border-accent:       rgba(212, 175, 55, 0.18);
+  --border-accent-hover: rgba(212, 175, 55, 0.40);
+
+  --scrollbar-track:  #050505;
+  --btn-text:         #0a0a0a;
+
+  --section-hero-overlay:
+    linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(5,5,5,0.75) 55%, rgba(0,0,0,0.92) 100%);
+  --section-services: linear-gradient(to bottom, #0a0a0a, #050505);
+  --section-why:      #050505;
+  --section-testi:    linear-gradient(to bottom, #050505, #0a0a0a);
+  --section-cta:      linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
+  --section-footer:   #050505;
+}
+
+── DEEP PURPLE + GOLD ────────────────────────────────────────
+:root {
+  --bg-primary:       #1e0a3c;
+  --bg-secondary:     #12052a;
+  --bg-navbar:        rgba(18, 5, 42, 0.96);
+  --bg-drawer:        rgba(18, 5, 42, 0.98);
+  --bg-card:          rgba(255, 255, 255, 0.07);
+  --bg-input:         rgba(255, 255, 255, 0.05);
+  --bg-input-focus:   rgba(255, 255, 255, 0.09);
+
+  --text-primary:     #ffffff;
+  --text-muted:       rgba(255, 255, 255, 0.58);
+  --text-placeholder: rgba(255, 255, 255, 0.32);
+
+  --accent:           #d4af37;
+  --accent-light:     #f4d97a;
+  --accent-pale:      #2a1050;
+  --accent-deep:      #b8962e;
+  --accent-rgb:       212, 175, 55;
+
+  --border-accent:       rgba(212, 175, 55, 0.20);
+  --border-accent-hover: rgba(212, 175, 55, 0.42);
+
+  --scrollbar-track:  #12052a;
+  --btn-text:         #1e0a3c;
+
+  --section-hero-overlay:
+    linear-gradient(to bottom, rgba(30,10,60,0.68) 0%, rgba(40,15,80,0.78) 55%, rgba(18,5,42,0.94) 100%);
+  --section-services: linear-gradient(to bottom, #1e0a3c, #12052a);
+  --section-why:      #12052a;
+  --section-testi:    linear-gradient(to bottom, #12052a, #1e0a3c);
+  --section-cta:      linear-gradient(135deg, #1e0a3c 0%, #2d1060 50%, #1e0a3c 100%);
+  --section-footer:   #12052a;
+}
+
+── FOREST GREEN + GOLD ───────────────────────────────────────
+:root {
+  --bg-primary:       #1a3a2a;
+  --bg-secondary:     #0d2018;
+  --bg-navbar:        rgba(13, 32, 24, 0.96);
+  --bg-drawer:        rgba(13, 32, 24, 0.98);
+  --bg-card:          rgba(255, 255, 255, 0.07);
+  --bg-input:         rgba(255, 255, 255, 0.05);
+  --bg-input-focus:   rgba(255, 255, 255, 0.09);
+
+  --text-primary:     #ffffff;
+  --text-muted:       rgba(255, 255, 255, 0.58);
+  --text-placeholder: rgba(255, 255, 255, 0.32);
+
+  --accent:           #d4af37;
+  --accent-light:     #f4d97a;
+  --accent-pale:      #1e3d2a;
+  --accent-deep:      #b8962e;
+  --accent-rgb:       212, 175, 55;
+
+  --border-accent:       rgba(212, 175, 55, 0.20);
+  --border-accent-hover: rgba(212, 175, 55, 0.42);
+
+  --scrollbar-track:  #0d2018;
+  --btn-text:         #1a3a2a;
+
+  --section-hero-overlay:
+    linear-gradient(to bottom, rgba(26,58,42,0.68) 0%, rgba(35,75,55,0.78) 55%, rgba(13,32,24,0.94) 100%);
+  --section-services: linear-gradient(to bottom, #1a3a2a, #0d2018);
+  --section-why:      #0d2018;
+  --section-testi:    linear-gradient(to bottom, #0d2018, #1a3a2a);
+  --section-cta:      linear-gradient(135deg, #1a3a2a 0%, #255038 50%, #1a3a2a 100%);
+  --section-footer:   #0d2018;
+}
+
+============================================================ */

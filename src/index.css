@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+/* ── Import theme tokens — edit theme.css to change colors ── */
+@import './theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ───────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+}
+
+/* ─── Component Layer ────────────────────────────────────── */
+@layer components {
+
+  /* ── Glassmorphism card ──────────────────────────────── */
+  .glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border-accent);
+    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.30);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+  .glass-card:hover {
+    transform: translateY(-6px) scale(1.015);
+    border-color: var(--border-accent-hover);
+    box-shadow: 0 18px 45px rgba(var(--accent-rgb), 0.14);
+  }
+
+  /* ── Gold gradient text ─────────────────────────────── */
+  .gold-text {
+    background: linear-gradient(
+      180deg,
+      var(--accent-pale)  0%,
+      var(--accent-light) 30%,
+      var(--accent)       60%,
+      var(--accent-deep)  100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 12px rgba(var(--accent-rgb), 0.28));
+  }
+
+  /* ── Shimmer gold heading (animated) ───────────────── */
+  .shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      var(--accent-pale)  0%,
+      var(--accent-light) 18%,
+      var(--accent)       38%,
+      var(--accent-deep)  52%,
+      var(--accent)       67%,
+      var(--accent-light) 83%,
+      var(--accent-pale)  100%
+    );
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3.8s linear infinite;
+    filter: drop-shadow(0 0 18px rgba(var(--accent-rgb), 0.38));
+  }
+
+  /* ── Gold button ────────────────────────────────────── */
+  .gold-btn {
+    background: linear-gradient(
+      135deg,
+      var(--accent-light) 0%,
+      var(--accent)       50%,
+      var(--accent-deep)  100%
+    );
+    color: var(--btn-text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    border-radius: 9999px;
+    padding: 12px 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .gold-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  .gold-btn:hover {
+    transform: scale(1.055);
+    box-shadow: 0 10px 32px rgba(var(--accent-rgb), 0.38);
+    filter: brightness(1.06);
+  }
+  .gold-btn:active { transform: scale(0.975); }
+
+  /* ── Thin gold rule ─────────────────────────────────── */
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+    opacity: 0.45;
+    display: block;
+  }
+
+  /* ── Gold icon container ────────────────────────────── */
+  .gold-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--accent-rgb), 0.10);
+    border: 1px solid rgba(var(--accent-rgb), 0.22);
+    transition: transform 0.3s ease, background 0.3s ease;
+    flex-shrink: 0;
+  }
+  .gold-icon-box:hover,
+  .group:hover .gold-icon-box {
+    transform: scale(1.12);
+    background: rgba(var(--accent-rgb), 0.18);
+  }
+
+  /* ── Form input ─────────────────────────────────────── */
+  .form-input {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1px solid var(--border-accent);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .form-input::placeholder { color: var(--text-placeholder); }
+  .form-input:focus {
+    border-color: rgba(var(--accent-rgb), 0.60);
+    background: var(--bg-input-focus);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.10);
+  }
+
+  /* ── Form label ─────────────────────────────────────── */
+  .form-label {
+    display: block;
+    color: rgba(var(--accent-rgb), 0.72);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* ── Section eyebrow ────────────────────────────────── */
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(var(--accent-rgb), 0.68);
+  }
+
+  /* ── Category pill ──────────────────────────────────── */
+  .cat-pill {
+    padding: 7px 18px;
+    border-radius: 9999px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border: 1px solid var(--border-accent);
+    background: rgba(var(--accent-rgb), 0.06);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.28s ease;
+    white-space: nowrap;
+  }
+  .cat-pill:hover {
+    background: rgba(var(--accent-rgb), 0.12);
+    color: var(--accent-light);
+    border-color: rgba(var(--accent-rgb), 0.35);
+  }
+  .cat-pill.active {
+    background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 50%, var(--accent-deep) 100%);
+    color: var(--btn-text);
+    font-weight: 600;
+    border-color: transparent;
+    box-shadow: 0 4px 18px rgba(var(--accent-rgb), 0.32);
+    transform: scale(1.05);
+  }
+}
+
+/* ─── Keyframes ─────────────────────────────────────────── */
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50%     { transform: translateY(-20px) rotate(4deg); }
+}
+@keyframes float2 {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50%     { transform: translateY(-14px) rotate(-4deg); }
+}
+@keyframes sparkle {
+  0%,100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%     { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+@keyframes shimmer {
+  0%   { background-position: -220% 0; }
+  100% { background-position:  220% 0; }
+}
+@keyframes pulseGold {
+  0%,100% { box-shadow: 0 0 0 0   rgba(var(--accent-rgb), 0.48); }
+  50%     { box-shadow: 0 0 0 18px rgba(var(--accent-rgb), 0); }
+}
+
+/* ─── Animation utility classes ──────────────────────────── */
+.animate-float  { animation: float  6s ease-in-out infinite; }
+.animate-float2 { animation: float2 7s ease-in-out infinite 1s; }
+.animate-float3 { animation: float  8s ease-in-out infinite 2s; }
+.animate-float4 { animation: float2 5s ease-in-out infinite 3s; }
+.animate-sparkle  { animation: sparkle 2.5s ease-in-out infinite; }
+.animate-sparkle2 { animation: sparkle 2.5s ease-in-out infinite 0.8s; }
+.animate-sparkle3 { animation: sparkle 2.5s ease-in-out infinite 1.6s; }
+.animate-pulse-gold { animation: pulseGold 2.2s ease-in-out infinite; }
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-light), var(--accent-deep));
+  border-radius: 4px;
+}
