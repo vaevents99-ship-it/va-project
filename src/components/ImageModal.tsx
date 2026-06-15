@@ -161,7 +161,6 @@ export function ImageModal({ item, onClose }: ImageModalProps) {
       `Hi! I'm interested in the following:\n\n` +
       `📦 Package: ${item.title}\n` +
       `📂 Category: ${item.category}\n` +
-      `💰 Price: ${item.price}\n` +
       `🖼️ Image: ${imageUrl}` +
       addonText +
       `\n\nCould you please share more details? Thank you!`
@@ -341,7 +340,7 @@ export function ImageModal({ item, onClose }: ImageModalProps) {
                       fontFamily:     "'DM Sans', sans-serif",
                       border:         `0.5px solid rgba(232,201,122,0.28)`,
                     }}>
-                      {item.price}
+                    
                     </div>
 
                     {/* Close button */}

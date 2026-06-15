@@ -227,7 +227,7 @@ const Testimonials = () => {
   });
 
   return (
-    <section style={{ background: 'rgba(4, 14, 35, 0.72)' }}>   {/* slightly darker than before */}
+    <section style={{ background: 'transparent' }}>   {/* slightly darker than before */}
 
       {/* ── Header ── */}
       <div style={{ textAlign: 'center', padding: '80px 32px 40px' }}>

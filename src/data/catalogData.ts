@@ -175,8 +175,6 @@ import imgWg3 from '../assets/catalog/Garlands/White garlands/White garlands (3)
 import imgWg4 from '../assets/catalog/Garlands/White garlands/White garlands (4).webp'
 
 
-// src/data/catalogData.ts  — confirm these are present (they are in your doc 6)
-
 export type BirthdaySubcategory =
   | 'Butterfly Theme'
   | 'Cartoons Theme'
@@ -189,16 +187,28 @@ export type CorporateSubcategory =
   | 'Corporate Events'
   | 'School or College Events';
 
-  export type WeddingorEngagementSubcategory = 
-  |'Entrance Decor'
-  |'Photobooth'
-  |'Reception Decor'
-  |'Stage Decor'
-  |'Mandap Decor'
-  |'Table Decor'
-  |'Floral Arrangements';
+export type WeddingorEngagementSubcategory =
+  | 'Entrance Decor'
+  | 'Photobooth'
+  | 'Reception Decor'
+  | 'Stage Decor'
+  | 'Mandap Decor'
+  | 'Table Decor'
+  | 'Floral Arrangements';
 
-export type Subcategory = BirthdaySubcategory | CorporateSubcategory | WeddingorEngagementSubcategory | GarlandSubcategory;
+export type GarlandSubcategory =
+  | 'Bridal Veni Flowers'
+  | 'Lotus Garland'
+  | 'Petals Garland'
+  | 'Premium Garlands'
+  | 'Rose Garland'
+  | 'White Garlands';
+
+export type Subcategory =
+  | BirthdaySubcategory
+  | CorporateSubcategory
+  | WeddingorEngagementSubcategory
+  | GarlandSubcategory;
 
 export type Category =
   | 'All'
@@ -210,9 +220,7 @@ export type Category =
   | 'House Warming'
   | 'Naming Ceremony'
   | 'Puberty'
-  |'Garlands';
-
-
+  | 'Garlands';
 
 export interface CatalogItem {
   id: number;
@@ -222,7 +230,6 @@ export interface CatalogItem {
   subcategory?: Subcategory;
   image: string;
   tags: string[];
-  price: string;
 }
 
 export const catalogData: CatalogItem[] = [
@@ -235,7 +242,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Butterfly Theme',
     image: imgBd1,
     tags: ['butterfly', 'floral', 'colorful'],
-    price: '₹4,500',
   },
   {
     id: 2,
@@ -245,7 +251,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Butterfly Theme',
     image: imgBd2,
     tags: ['butterfly', 'pastel', 'kids'],
-    price: '₹4,500',
   },
   {
     id: 3,
@@ -255,7 +260,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Butterfly Theme',
     image: imgBd3,
     tags: ['butterfly', 'balloons', 'ribbons'],
-    price: '₹4,500',
   },
   {
     id: 4,
@@ -265,7 +269,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Butterfly Theme',
     image: imgBd4,
     tags: ['butterfly', 'stage', 'floral'],
-    price: '₹4,800',
   },
   {
     id: 5,
@@ -275,7 +278,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Butterfly Theme',
     image: imgBd5,
     tags: ['butterfly', 'shimmer', 'arch'],
-    price: '₹5,000',
   },
   {
     id: 6,
@@ -285,7 +287,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Butterfly Theme',
     image: imgBd6,
     tags: ['butterfly', 'grand', 'balloons'],
-    price: '₹5,200',
   },
 
   // ── Birthday › Cartoons Theme ────────────────────────────────────────────────
@@ -297,7 +298,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Cartoons Theme',
     image: imgBd7,
     tags: ['cartoon', 'kids', 'colorful'],
-    price: '₹4,800',
   },
   {
     id: 8,
@@ -307,7 +307,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Cartoons Theme',
     image: imgBd8,
     tags: ['cartoon', 'stage', 'vibrant'],
-    price: '₹4,800',
   },
   {
     id: 9,
@@ -317,7 +316,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Cartoons Theme',
     image: imgBd9,
     tags: ['cartoon', 'party', 'streamers'],
-    price: '₹5,000',
   },
   {
     id: 10,
@@ -327,7 +325,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Cartoons Theme',
     image: imgBd10,
     tags: ['cartoon', 'standees', 'festive'],
-    price: '₹5,200',
   },
   {
     id: 11,
@@ -337,7 +334,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Cartoons Theme',
     image: imgBd11,
     tags: ['cartoon', 'arch', 'personalized'],
-    price: '₹5,500',
   },
   {
     id: 12,
@@ -347,7 +343,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Cartoons Theme',
     image: imgBd12,
     tags: ['cartoon', 'foil', 'cake table'],
-    price: '₹5,000',
   },
   {
     id: 13,
@@ -357,7 +352,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Cartoons Theme',
     image: imgBd13,
     tags: ['cartoon', 'props', 'photo booth'],
-    price: '₹5,800',
   },
   {
     id: 14,
@@ -367,7 +361,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Cartoons Theme',
     image: imgBd14,
     tags: ['cartoon', 'sculptures', 'drapes'],
-    price: '₹5,200',
   },
   {
     id: 15,
@@ -377,7 +370,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Cartoons Theme',
     image: imgBd15,
     tags: ['cartoon', 'grand', 'LED'],
-    price: '₹6,000',
   },
 
   // ── Birthday › Jungle Theme ──────────────────────────────────────────────────
@@ -389,7 +381,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Jungle Theme',
     image: imgBd16,
     tags: ['jungle', 'tropical', 'animals'],
-    price: '₹5,500',
   },
   {
     id: 17,
@@ -399,7 +390,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Jungle Theme',
     image: imgBd17,
     tags: ['jungle', 'safari', 'garlands'],
-    price: '₹5,500',
   },
   {
     id: 18,
@@ -409,7 +399,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Jungle Theme',
     image: imgBd18,
     tags: ['jungle', 'green', 'vines'],
-    price: '₹5,800',
   },
   {
     id: 19,
@@ -419,7 +408,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Jungle Theme',
     image: imgBd19,
     tags: ['jungle', 'adventure', 'standees'],
-    price: '₹6,000',
   },
   {
     id: 20,
@@ -429,7 +417,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Jungle Theme',
     image: imgBd20,
     tags: ['jungle', 'tropical', 'backdrop'],
-    price: '₹5,800',
   },
   {
     id: 21,
@@ -439,7 +426,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Jungle Theme',
     image: imgBd21,
     tags: ['jungle', 'premium', 'canopy'],
-    price: '₹6,500',
   },
   {
     id: 22,
@@ -449,7 +435,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Jungle Theme',
     image: imgBd22,
     tags: ['jungle', 'grand', 'arch'],
-    price: '₹7,000',
   },
 
   // ── Birthday › Murugan Theme ─────────────────────────────────────────────────
@@ -461,7 +446,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Murugan Theme',
     image: imgBd23,
     tags: ['murugan', 'traditional', 'floral'],
-    price: '₹6,000',
   },
   {
     id: 24,
@@ -471,7 +455,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Murugan Theme',
     image: imgBd24,
     tags: ['murugan', 'grand', 'festive'],
-    price: '₹6,500',
   },
 
   // ── Birthday › Prince and Queen Theme ───────────────────────────────────────
@@ -483,7 +466,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Prince and Queen Theme',
     image: imgBd25,
     tags: ['royal', 'prince', 'queen'],
-    price: '₹7,500',
   },
   {
     id: 26,
@@ -493,7 +475,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Prince and Queen Theme',
     image: imgBd26,
     tags: ['royal', 'throne', 'golden'],
-    price: '₹8,000',
   },
   {
     id: 27,
@@ -503,7 +484,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Prince and Queen Theme',
     image: imgBd27,
     tags: ['royal', 'grand', 'chandelier'],
-    price: '₹8,500',
   },
 
   // ── Birthday › Space Theme ───────────────────────────────────────────────────
@@ -515,7 +495,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Space Theme',
     image: imgBd28,
     tags: ['space', 'galaxy', 'neon'],
-    price: '₹6,000',
   },
   {
     id: 29,
@@ -525,7 +504,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Space Theme',
     image: imgBd29,
     tags: ['space', 'cosmic', 'stars'],
-    price: '₹6,200',
   },
   {
     id: 30,
@@ -535,7 +513,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Space Theme',
     image: imgBd30,
     tags: ['space', 'grand', 'LED'],
-    price: '₹6,800',
   },
 
   // ── Corporate Events › Corporate Events ─────────────────────────────────────
@@ -547,7 +524,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Corporate Events',
     image: imgCe1,
     tags: ['corporate', 'stage', 'LED'],
-    price: '₹15,000',
   },
   {
     id: 32,
@@ -557,7 +533,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Corporate Events',
     image: imgCe2,
     tags: ['corporate', 'grand', 'professional'],
-    price: '₹18,000',
   },
 
   // ── Corporate Events › School or College Events ──────────────────────────────
@@ -569,7 +544,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'School or College Events',
     image: imgCe3,
     tags: ['school', 'annual day', 'colorful'],
-    price: '₹8,000',
   },
   {
     id: 34,
@@ -579,7 +553,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'School or College Events',
     image: imgCe4,
     tags: ['college', 'graduation', 'elegant'],
-    price: '₹9,500',
   },
   {
     id: 35,
@@ -589,7 +562,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'School or College Events',
     image: imgCe5,
     tags: ['school', 'festive', 'arch'],
-    price: '₹7,500',
   },
   {
     id: 36,
@@ -599,7 +571,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'School or College Events',
     image: imgCe6,
     tags: ['college', 'fest', 'tropical'],
-    price: '₹10,000',
   },
 
   // ── Baby Shower ──────────────────────────────────────────────────────────────
@@ -610,7 +581,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs1,
     tags: ['baby shower', 'traditional', 'mandap'],
-    price: '₹8,000',
   },
   {
     id: 38,
@@ -619,7 +589,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs2,
     tags: ['baby shower', 'rustic', 'marigold'],
-    price: '₹7,500',
   },
   {
     id: 39,
@@ -628,7 +597,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs3,
     tags: ['baby shower', 'tropical', 'floral'],
-    price: '₹8,500',
   },
   {
     id: 40,
@@ -637,7 +605,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs4,
     tags: ['baby shower', 'royal', 'gold'],
-    price: '₹10,000',
   },
   {
     id: 41,
@@ -646,7 +613,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs5,
     tags: ['baby shower', 'classic', 'garlands'],
-    price: '₹8,000',
   },
   {
     id: 42,
@@ -655,7 +621,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs6,
     tags: ['baby shower', 'pink', 'intimate'],
-    price: '₹7,800',
   },
   {
     id: 43,
@@ -664,7 +629,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs7,
     tags: ['baby shower', 'grand', 'luxury'],
-    price: '₹12,000',
   },
   {
     id: 44,
@@ -673,7 +637,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs8,
     tags: ['baby shower', 'pastel', 'balloons'],
-    price: '₹7,500',
   },
   {
     id: 45,
@@ -682,7 +645,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs9,
     tags: ['baby shower', 'traditional', 'yellow'],
-    price: '₹9,000',
   },
   {
     id: 46,
@@ -691,7 +653,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs10,
     tags: ['baby shower', 'elegant', 'columns'],
-    price: '₹9,500',
   },
   {
     id: 47,
@@ -700,7 +661,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs11,
     tags: ['baby shower', 'outdoor', 'tropical'],
-    price: '₹8,500',
   },
   {
     id: 48,
@@ -709,7 +669,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs12,
     tags: ['baby shower', 'personalized', 'garden'],
-    price: '₹7,000',
   },
   {
     id: 49,
@@ -718,7 +677,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Baby Shower',
     image: imgBs13,
     tags: ['baby shower', 'premium', 'ornate'],
-    price: '₹11,000',
   },
 
   // ── Ear Piercing ─────────────────────────────────────────────────────────────
@@ -729,7 +687,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Ear Piercing',
     image: imgEp1,
     tags: ['ear piercing', 'elegant', 'floral'],
-    price: '₹6,000',
   },
   {
     id: 51,
@@ -738,7 +695,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Ear Piercing',
     image: imgEp2,
     tags: ['ear piercing', 'vibrant', 'arch'],
-    price: '₹7,500',
   },
   {
     id: 52,
@@ -747,7 +703,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Ear Piercing',
     image: imgEp3,
     tags: ['ear piercing', 'pink', 'romantic'],
-    price: '₹7,000',
   },
   {
     id: 53,
@@ -756,7 +711,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Ear Piercing',
     image: imgEp4,
     tags: ['ear piercing', 'traditional', 'golden'],
-    price: '₹6,500',
   },
   {
     id: 54,
@@ -765,7 +719,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Ear Piercing',
     image: imgEp5,
     tags: ['ear piercing', 'royal', 'red'],
-    price: '₹8,500',
   },
   {
     id: 55,
@@ -774,7 +727,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Ear Piercing',
     image: imgEp6,
     tags: ['ear piercing', 'classic', 'pink'],
-    price: '₹6,800',
   },
   {
     id: 56,
@@ -783,7 +735,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Ear Piercing',
     image: imgEp7,
     tags: ['ear piercing', 'tropical', 'green'],
-    price: '₹7,200',
   },
 
   // ── House Warming ─────────────────────────────────────────────────────────────
@@ -794,7 +745,6 @@ export const catalogData: CatalogItem[] = [
     category: 'House Warming',
     image: imgHw1,
     tags: ['house warming', 'traditional', 'marigold'],
-    price: '₹5,000',
   },
   {
     id: 58,
@@ -803,7 +753,6 @@ export const catalogData: CatalogItem[] = [
     category: 'House Warming',
     image: imgHw2,
     tags: ['house warming', 'elegant', 'arch'],
-    price: '₹5,500',
   },
   {
     id: 59,
@@ -812,7 +761,6 @@ export const catalogData: CatalogItem[] = [
     category: 'House Warming',
     image: imgHw3,
     tags: ['house warming', 'illuminated', 'colorful'],
-    price: '₹6,000',
   },
   {
     id: 60,
@@ -821,7 +769,6 @@ export const catalogData: CatalogItem[] = [
     category: 'House Warming',
     image: imgHw4,
     tags: ['house warming', 'classic', 'tropical'],
-    price: '₹5,200',
   },
   {
     id: 61,
@@ -830,7 +777,6 @@ export const catalogData: CatalogItem[] = [
     category: 'House Warming',
     image: imgHw5,
     tags: ['house warming', 'door', 'garlands'],
-    price: '₹4,500',
   },
   {
     id: 62,
@@ -839,7 +785,6 @@ export const catalogData: CatalogItem[] = [
     category: 'House Warming',
     image: imgHw6,
     tags: ['house warming', 'festive', 'temple'],
-    price: '₹5,000',
   },
   {
     id: 63,
@@ -848,7 +793,6 @@ export const catalogData: CatalogItem[] = [
     category: 'House Warming',
     image: imgHw7,
     tags: ['house warming', 'premium', 'pink'],
-    price: '₹6,500',
   },
   {
     id: 64,
@@ -857,7 +801,6 @@ export const catalogData: CatalogItem[] = [
     category: 'House Warming',
     image: imgHw8,
     tags: ['house warming', 'wooden', 'wreath'],
-    price: '₹4,800',
   },
   {
     id: 65,
@@ -866,7 +809,6 @@ export const catalogData: CatalogItem[] = [
     category: 'House Warming',
     image: imgHw9,
     tags: ['house warming', 'grand', 'roses'],
-    price: '₹7,000',
   },
   {
     id: 66,
@@ -875,7 +817,6 @@ export const catalogData: CatalogItem[] = [
     category: 'House Warming',
     image: imgHw10,
     tags: ['house warming', 'green', 'simple'],
-    price: '₹4,500',
   },
 
   // ── Naming Ceremony ───────────────────────────────────────────────────────────
@@ -886,7 +827,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Naming Ceremony',
     image: imgNc1,
     tags: ['naming ceremony', 'princess', 'pink'],
-    price: '₹5,500',
   },
   {
     id: 68,
@@ -895,7 +835,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Naming Ceremony',
     image: imgNc2,
     tags: ['naming ceremony', 'balloons', 'floral'],
-    price: '₹5,000',
   },
   {
     id: 69,
@@ -904,7 +843,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Naming Ceremony',
     image: imgNc3,
     tags: ['naming ceremony', 'elegant', 'curtain'],
-    price: '₹5,200',
   },
   {
     id: 70,
@@ -913,7 +851,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Naming Ceremony',
     image: imgNc4,
     tags: ['naming ceremony', 'traditional', 'green'],
-    price: '₹5,800',
   },
 
   // ── Puberty ───────────────────────────────────────────────────────────────────
@@ -924,7 +861,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Puberty',
     image: imgPu1,
     tags: ['puberty', 'traditional', 'marigold'],
-    price: '₹6,000',
   },
   {
     id: 72,
@@ -933,7 +869,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Puberty',
     image: imgPu2,
     tags: ['puberty', 'classic', 'yellow'],
-    price: '₹5,500',
   },
   {
     id: 73,
@@ -942,7 +877,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Puberty',
     image: imgPu3,
     tags: ['puberty', 'festive', 'south indian'],
-    price: '₹6,500',
   },
   {
     id: 74,
@@ -951,7 +885,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Puberty',
     image: imgPu4,
     tags: ['puberty', 'elegant', 'arch'],
-    price: '₹7,000',
   },
   {
     id: 75,
@@ -960,7 +893,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Puberty',
     image: imgPu5,
     tags: ['puberty', 'traditional', 'floral'],
-    price: '₹5,800',
   },
   {
     id: 76,
@@ -969,7 +901,6 @@ export const catalogData: CatalogItem[] = [
     category: 'Puberty',
     image: imgPu6,
     tags: ['puberty', 'green', 'outdoor'],
-    price: '₹5,000',
   },
   {
     id: 77,
@@ -978,9 +909,9 @@ export const catalogData: CatalogItem[] = [
     category: 'Puberty',
     image: imgPu7,
     tags: ['puberty', 'grand', 'ornate'],
-    price: '₹7,500',
   },
-  // Stage Decor
+
+  // ── Wedding & Engagement › Stage Decor ───────────────────────────────────────
   {
     id: 78,
     title: 'Stage Decor (1)',
@@ -989,7 +920,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Stage Decor',
     image: imgSd1,
     tags: ['stage', 'wedding', 'floral'],
-    price: '₹25,000',
   },
   {
     id: 79,
@@ -999,7 +929,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Stage Decor',
     image: imgSd2,
     tags: ['stage', 'wedding', 'elegant'],
-    price: '₹30,000',
   },
   {
     id: 80,
@@ -1009,7 +938,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Stage Decor',
     image: imgSd3,
     tags: ['stage', 'wedding', 'grand'],
-    price: '₹28,000',
   },
   {
     id: 81,
@@ -1019,7 +947,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Stage Decor',
     image: imgSd4,
     tags: ['stage', 'wedding', 'traditional'],
-    price: '₹22,000',
   },
   {
     id: 82,
@@ -1029,7 +956,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Stage Decor',
     image: imgSd5,
     tags: ['stage', 'wedding', 'pink'],
-    price: '₹27,000',
   },
   {
     id: 83,
@@ -1039,7 +965,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Stage Decor',
     image: imgSd6,
     tags: ['stage', 'wedding', 'majestic'],
-    price: '₹35,000',
   },
   {
     id: 84,
@@ -1049,10 +974,9 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Stage Decor',
     image: imgSd7,
     tags: ['stage', 'wedding', 'modern'],
-    price: '₹32,000',
   },
 
-  // Reception Decor
+  // ── Wedding & Engagement › Reception Decor ────────────────────────────────────
   {
     id: 85,
     title: 'Reception Decor (1)',
@@ -1061,7 +985,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Reception Decor',
     image: imgRd1,
     tags: ['reception', 'wedding', 'elegant'],
-    price: '₹40,000',
   },
   {
     id: 86,
@@ -1071,7 +994,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Reception Decor',
     image: imgRd2,
     tags: ['reception', 'wedding', 'sophisticated'],
-    price: '₹45,000',
   },
   {
     id: 87,
@@ -1081,7 +1003,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Reception Decor',
     image: imgRd3,
     tags: ['reception', 'wedding', 'grand'],
-    price: '₹50,000',
   },
   {
     id: 88,
@@ -1091,10 +1012,9 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Reception Decor',
     image: imgRd4,
     tags: ['reception', 'wedding', 'classic'],
-    price: '₹42,000',
   },
 
-  // Photobooth
+  // ── Wedding & Engagement › Photobooth ─────────────────────────────────────────
   {
     id: 89,
     title: 'Photobooth (1)',
@@ -1103,7 +1023,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Photobooth',
     image: imgPb1,
     tags: ['photobooth', 'wedding', 'floral'],
-    price: '₹8,000',
   },
   {
     id: 90,
@@ -1113,7 +1032,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Photobooth',
     image: imgPb2,
     tags: ['photobooth', 'wedding', 'elegant'],
-    price: '₹9,000',
   },
   {
     id: 91,
@@ -1123,7 +1041,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Photobooth',
     image: imgPb3,
     tags: ['photobooth', 'wedding', 'whimsical'],
-    price: '₹7,500',
   },
   {
     id: 92,
@@ -1133,7 +1050,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Photobooth',
     image: imgPb4,
     tags: ['photobooth', 'wedding', 'luxury'],
-    price: '₹12,000',
   },
   {
     id: 93,
@@ -1143,10 +1059,9 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Photobooth',
     image: imgPb5,
     tags: ['photobooth', 'wedding', 'modern'],
-    price: '₹10,000',
   },
 
-  // Entrance Decor
+  // ── Wedding & Engagement › Entrance Decor ─────────────────────────────────────
   {
     id: 94,
     title: 'Entrance Decor (1)',
@@ -1155,7 +1070,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd1,
     tags: ['entrance', 'wedding', 'grand'],
-    price: '₹15,000',
   },
   {
     id: 95,
@@ -1165,7 +1079,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd2,
     tags: ['entrance', 'wedding', 'elegant'],
-    price: '₹18,000',
   },
   {
     id: 96,
@@ -1175,7 +1088,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd3,
     tags: ['entrance', 'wedding', 'traditional'],
-    price: '₹12,000',
   },
   {
     id: 97,
@@ -1185,7 +1097,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd4,
     tags: ['entrance', 'wedding', 'modern'],
-    price: '₹14,000',
   },
   {
     id: 98,
@@ -1195,7 +1106,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd5,
     tags: ['entrance', 'wedding', 'lavish'],
-    price: '₹20,000',
   },
   {
     id: 99,
@@ -1205,7 +1115,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd6,
     tags: ['entrance', 'wedding', 'royal'],
-    price: '₹22,000',
   },
   {
     id: 100,
@@ -1215,7 +1124,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd7,
     tags: ['entrance', 'wedding', 'vibrant'],
-    price: '₹16,000',
   },
   {
     id: 101,
@@ -1225,7 +1133,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd8,
     tags: ['entrance', 'wedding', 'sophisticated'],
-    price: '₹19,000',
   },
   {
     id: 102,
@@ -1235,7 +1142,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd9,
     tags: ['entrance', 'wedding', 'dreamy'],
-    price: '₹17,000',
   },
   {
     id: 103,
@@ -1245,7 +1151,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd10,
     tags: ['entrance', 'wedding', 'classic'],
-    price: '₹13,000',
   },
   {
     id: 104,
@@ -1255,7 +1160,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd11,
     tags: ['entrance', 'wedding', 'opulent'],
-    price: '₹25,000',
   },
   {
     id: 105,
@@ -1265,7 +1169,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd12,
     tags: ['entrance', 'wedding', 'rustic'],
-    price: '₹11,000',
   },
   {
     id: 106,
@@ -1275,9 +1178,9 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Entrance Decor',
     image: imgEd13,
     tags: ['entrance', 'wedding', 'majestic'],
-    price: '₹24,000',
   },
-  // Bridal Veni Flowers
+
+  // ── Garlands › Bridal Veni Flowers ───────────────────────────────────────────
   {
     id: 107,
     title: 'Bridal Veni Flowers (1)',
@@ -1286,7 +1189,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Bridal Veni Flowers',
     image: imgBvf1,
     tags: ['bridal', 'veni', 'jasmine'],
-    price: '₹1,500',
   },
   {
     id: 108,
@@ -1296,7 +1198,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Bridal Veni Flowers',
     image: imgBvf2,
     tags: ['bridal', 'veni', 'premium'],
-    price: '₹1,800',
   },
   {
     id: 109,
@@ -1306,10 +1207,9 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Bridal Veni Flowers',
     image: imgBvf3,
     tags: ['bridal', 'veni', 'grand'],
-    price: '₹2,000',
   },
 
-  // Lotus Garland
+  // ── Garlands › Lotus Garland ──────────────────────────────────────────────────
   {
     id: 110,
     title: 'Lotus Garland (1)',
@@ -1318,7 +1218,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Lotus Garland',
     image: imgLg1,
     tags: ['lotus', 'garland', 'sacred'],
-    price: '₹1,200',
   },
   {
     id: 111,
@@ -1328,7 +1227,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Lotus Garland',
     image: imgLg2,
     tags: ['lotus', 'garland', 'elegant'],
-    price: '₹1,400',
   },
   {
     id: 112,
@@ -1338,7 +1236,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Lotus Garland',
     image: imgLg3,
     tags: ['lotus', 'garland', 'premium'],
-    price: '₹1,600',
   },
   {
     id: 113,
@@ -1348,10 +1245,9 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Lotus Garland',
     image: imgLg4,
     tags: ['lotus', 'garland', 'grand'],
-    price: '₹1,800',
   },
 
-  // Petals Garland
+  // ── Garlands › Petals Garland ─────────────────────────────────────────────────
   {
     id: 114,
     title: 'Petals Garland (1)',
@@ -1360,7 +1256,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Petals Garland',
     image: imgPg1,
     tags: ['petals', 'garland', 'rose'],
-    price: '₹1,000',
   },
   {
     id: 115,
@@ -1370,7 +1265,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Petals Garland',
     image: imgPg2,
     tags: ['petals', 'garland', 'marigold'],
-    price: '₹1,200',
   },
   {
     id: 116,
@@ -1380,10 +1274,9 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Petals Garland',
     image: imgPg3,
     tags: ['petals', 'garland', 'colorful'],
-    price: '₹1,400',
   },
 
-  // Premium Garlands
+  // ── Garlands › Premium Garlands ──────────────────────────────────────────────
   {
     id: 117,
     title: 'Premium Garlands (1)',
@@ -1392,7 +1285,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Premium Garlands',
     image: imgPrg1,
     tags: ['premium', 'garland', 'luxury'],
-    price: '₹2,500',
   },
   {
     id: 118,
@@ -1402,7 +1294,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Premium Garlands',
     image: imgPrg2,
     tags: ['premium', 'garland', 'orchid'],
-    price: '₹3,000',
   },
   {
     id: 119,
@@ -1412,7 +1303,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Premium Garlands',
     image: imgPrg3,
     tags: ['premium', 'garland', 'opulent'],
-    price: '₹2,800',
   },
   {
     id: 120,
@@ -1422,10 +1312,9 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Premium Garlands',
     image: imgPrg4,
     tags: ['premium', 'garland', 'majestic'],
-    price: '₹3,500',
   },
 
-  // Rose Garland
+  // ── Garlands › Rose Garland ───────────────────────────────────────────────────
   {
     id: 121,
     title: 'Rose Garland (1)',
@@ -1434,7 +1323,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Rose Garland',
     image: imgRg1,
     tags: ['rose', 'garland', 'classic'],
-    price: '₹1,200',
   },
   {
     id: 122,
@@ -1444,7 +1332,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Rose Garland',
     image: imgRg2,
     tags: ['rose', 'garland', 'elegant'],
-    price: '₹1,400',
   },
   {
     id: 123,
@@ -1454,10 +1341,9 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'Rose Garland',
     image: imgRg3,
     tags: ['rose', 'garland', 'premium'],
-    price: '₹1,600',
   },
 
-  // White Garlands
+  // ── Garlands › White Garlands ─────────────────────────────────────────────────
   {
     id: 124,
     title: 'White Garlands (1)',
@@ -1466,7 +1352,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'White Garlands',
     image: imgWg1,
     tags: ['white', 'garland', 'jasmine'],
-    price: '₹1,000',
   },
   {
     id: 125,
@@ -1476,7 +1361,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'White Garlands',
     image: imgWg2,
     tags: ['white', 'garland', 'tuberose'],
-    price: '₹1,200',
   },
   {
     id: 126,
@@ -1486,7 +1370,6 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'White Garlands',
     image: imgWg3,
     tags: ['white', 'garland', 'premium'],
-    price: '₹1,400',
   },
   {
     id: 127,
@@ -1496,10 +1379,7 @@ export const catalogData: CatalogItem[] = [
     subcategory: 'White Garlands',
     image: imgWg4,
     tags: ['white', 'garland', 'premium'],
-    price: '₹1,400',
   },
-
-
 ];
 
 export const categories: Category[] = [
@@ -1515,7 +1395,7 @@ export const categories: Category[] = [
   'Garlands',
 ];
 
-// ── Subcategory map (used by CatalogMenu) ─────────────────────────────────────
+// ── Subcategory arrays (used by CatalogMenu) ──────────────────────────────────
 export const birthdaySubcategories: BirthdaySubcategory[] = [
   'Butterfly Theme',
   'Cartoons Theme',
@@ -1539,15 +1419,6 @@ export const WEDDING_SUBCATEGORIES: WeddingorEngagementSubcategory[] = [
   'Table Decor',
   'Floral Arrangements',
 ];
-
-
-export type GarlandSubcategory =
-  | 'Bridal Veni Flowers'
-  | 'Lotus Garland'
-  | 'Petals Garland'
-  | 'Premium Garlands'
-  | 'Rose Garland'
-  | 'White Garlands';
 
 export const GARLAND_SUBCATEGORIES: GarlandSubcategory[] = [
   'Bridal Veni Flowers',

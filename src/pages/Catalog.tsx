@@ -1,5 +1,6 @@
+
 // src/pages/Catalog.tsx
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   catalogData,
@@ -169,13 +170,14 @@ function CategoryDropdown({
   const ref = useRef<HTMLDivElement>(null);
   const isActive = activeCategory === categoryValue;
 
-  useEffect(() => {
+  // Close on outside click
+  useState(() => {
     const handler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
-  }, []);
+  });
 
   return (
     <div ref={ref} style={{ position: 'relative', zIndex: open ? 500 : 120, flexShrink: 0 }}>
@@ -984,7 +986,6 @@ function CatalogCard({
             border: `0.5px solid rgba(232,201,122,0.28)`,
           }}
         >
-          {item.price}
         </div>
         <AnimatePresence>
           {hovered && (
@@ -1101,19 +1102,6 @@ export function Catalog() {
   const [activeSub, setActiveSub] = useState<string | null>(null);
   const [modalItem, setModalItem] = useState<CatalogItem | null>(null);
   const [enquiryItems, setEnquiryItems] = useState<SelectedItem[]>([]);
-  const pillRowRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (pillRowRef.current) {
-      const el = pillRowRef.current;
-      (el.style as any).msOverflowStyle = 'none';
-      (el.style as any).scrollbarWidth = 'none';
-      const style = document.createElement('style');
-      style.textContent = '.pill-row::-webkit-scrollbar { display: none; }';
-      document.head.appendChild(style);
-      el.classList.add('pill-row');
-    }
-  }, []);
 
   const DROPDOWN_CATEGORIES: Category[] = ['Wedding & Engagement', 'Birthday', 'Corporate Events', 'Garlands'];
 
@@ -1166,8 +1154,7 @@ export function Catalog() {
           label: item.title,
           category: item.category,
           subcategory: item.subcategory,
-          image: item.image,
-          price: item.price,
+          image: item.image
         },
       ];
     });
@@ -1202,6 +1189,9 @@ export function Catalog() {
         backgroundAttachment: 'fixed',
       }}
     >
+      {/* Hide scrollbar for pill row */}
+      <style>{`.pill-row::-webkit-scrollbar { display: none; }`}</style>
+
       {/* ── Hero / Filter header ── */}
       <div
         style={{
@@ -1321,23 +1311,25 @@ export function Catalog() {
 
         {/* ── Category filter pills ── */}
         <motion.div
-          ref={pillRowRef}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.24 }}
+          className="pill-row"
           style={{
             display: 'flex',
             gap: 8,
             overflowX: 'auto',
             WebkitOverflowScrolling: 'touch' as React.CSSProperties['WebkitOverflowScrolling'],
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
+            alignItems: 'center',
+            // ↓ FIX: flex-start prevents clipping on mobile; nowrap enables horizontal scroll
+            justifyContent: 'flex-start',
+            flexWrap: 'nowrap',
             position: 'relative',
             zIndex: 30,
-            padding: '0 20px',
-            paddingBottom: 160,
-            marginBottom: -160,
+            // ↓ FIX: simple padding, no negative-margin hack
+            padding: '0 20px 16px',
+            scrollbarWidth: 'none' as React.CSSProperties['scrollbarWidth'],
+            msOverflowStyle: 'none' as React.CSSProperties['msOverflowStyle'],
           }}
         >
           {categories.map((cat) => {
@@ -1399,14 +1391,14 @@ export function Catalog() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
               style={{
-                marginTop: 14,
-                position: 'relative',   // ← FIX: establishes stacking context
-                zIndex: 40,             // ← FIX: above the pill row's z:30 overflow area
+                marginTop: 8,
+                position: 'relative',
+                zIndex: 40,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 8,
-                padding: '0 20px',
+                padding: '0 20px 16px',
               }}
             >
               <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: C.textMuted }}>

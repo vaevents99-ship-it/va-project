@@ -554,7 +554,7 @@ const Home = () => {
                 <motion.blockquote initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.28, duration: 0.65 }} className="mb-6 pl-5 italic text-lg font-body leading-relaxed" style={{ color: C.textPrimary, borderLeft: `3px solid ${C.gold}` }}>
                   "Every event is a once-in-a-lifetime moment — it deserves nothing less than perfection."
                 </motion.blockquote>
-                {['With over a decade of experience turning ordinary spaces into extraordinary celebrations, Vinitha founded VA Decorations with a single belief — every event deserves to feel like magic.', 'Her eye for detail, passion for bespoke design, and relentless pursuit of perfection have made VA the most trusted name in event décor across the region.'].map((para, i) => (
+                {['With over a decade of experience turning ordinary spaces into extraordinary celebrations, Mukesh founded VA Decorations with a single belief — every event deserves to feel like magic.', 'Her eye for detail, passion for bespoke design, and relentless pursuit of perfection have made VA the most trusted name in event décor across the region.'].map((para, i) => (
                   <motion.p key={i} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.36 + i * 0.12, duration: 0.6 }} className="text-base leading-relaxed font-body mb-4" style={{ color: C.textSecondary }}>{para}</motion.p>
                 ))}
                 <motion.div initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.58, duration: 0.6 }} className="flex flex-wrap gap-3 justify-center lg:justify-start mt-7">
@@ -600,7 +600,7 @@ const Home = () => {
                 </div>
                 <p className="font-display font-bold text-xl mb-1" style={{ color: C.textPrimary }}>Best Event Decorator</p>
                 <p className="text-sm font-body mb-1" style={{ color: C.gold }}>Regional Excellence Awards</p>
-                <p className="text-xs font-body mb-5" style={{ color: C.textMuted }}>2024 · Tamil Nadu</p>
+                <p className="text-xs font-body mb-5" style={{ color: C.textMuted }}>2024 · Trichy </p>
                 <div className="flex items-center justify-center gap-1.5">
                   {[...Array(5)].map((_, i) => (
                     <motion.div key={i} initial={{ opacity: 0, scale: 0, rotate: -30 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} viewport={{ once: true }} transition={{ delay: 0.55 + i * 0.08, duration: 0.4, type: 'spring', stiffness: 260 }}>
